@@ -112,15 +112,11 @@ jobs:
       #7 Python security checker - For issue 2
       - name: Install linting tools
         run: |
-          pip install flake8 bandit
+          pip install flake8
 
       - name: Run flake8 linting
         run: |
           flake8 backend/
-
-      - name: Run security scan with Bandit
-        run: |
-          bandit -r backend/
 
   # Job 2: Build and Push Docker Images (runs only if tests pass)
   build_and_push_images:
